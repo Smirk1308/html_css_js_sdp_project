@@ -30,6 +30,9 @@
 
 <body data-bs-spy="scroll" data-bs-target="#navbarJivanSathi" data-bs-offset="100" tabindex="0">
 
+  <!-- Ambient Floating Bio-Particles Background System -->
+  <div class="particles-container" aria-hidden="true" id="particlesContainer"></div>
+
   <!-- =========================================================================
        1. NAVIGATION BAR (Frosted Glass Sticky Header)
        ========================================================================= -->
@@ -86,6 +89,11 @@
                 <i class="bi bi-droplet-half me-1"></i> Water Tracker
               </a>
             </li>
+            <li class="nav-item ms-lg-2 mt-2 mt-lg-0 d-flex align-items-center">
+              <button class="btn-theme-toggle" id="themeToggleBtn" type="button" aria-label="Toggle Light and Dark Mode" title="Toggle Light/Dark Theme">
+                <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
+              </button>
+            </li>
           </ul>
         </div>
       </div>
@@ -98,8 +106,9 @@
   <main>
     <section id="hero" class="hero-section" aria-label="Hero Overview">
       <div class="container hero-content">
-        <div class="row align-items-center">
-          <div class="col-lg-10 col-xl-9 mx-auto text-center">
+        <div class="row align-items-center g-5">
+          <!-- Hero Text & Actions -->
+          <div class="col-lg-7 text-center text-lg-start">
             
             <!-- Badge -->
             <div class="reveal-on-scroll">
@@ -114,12 +123,12 @@
             </h1>
 
             <!-- Tagline & Description -->
-            <p class="hero-subtitle mx-auto reveal-on-scroll delay-200">
+            <p class="hero-subtitle reveal-on-scroll delay-200">
               Your companion for a healthier life. Cultivate sustainable daily habits, clean nutrition, active movement, and deep recovery designed to help students and busy individuals flourish every day.
             </p>
 
             <!-- CTA Action Buttons -->
-            <div class="d-flex flex-wrap justify-content-center gap-3 reveal-on-scroll delay-300">
+            <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3 reveal-on-scroll delay-300">
               <a href="#lifestyle" class="btn btn-jivansathi-primary">
                 <span>Explore Wellness Pillars</span>
                 <i class="bi bi-arrow-down-circle"></i>
@@ -129,8 +138,32 @@
                 <span>Daily Water Tracker</span>
               </a>
             </div>
+          </div>
 
-            <!-- Animated Stat Counters Row -->
+          <!-- 3D Floating Hero "Vitality Orb" Column -->
+          <div class="col-lg-5 text-center reveal-on-scroll delay-200">
+            <div class="vitality-orb-wrapper">
+              <div class="orb-ring orb-ring-1" aria-hidden="true"></div>
+              <div class="orb-ring orb-ring-2" aria-hidden="true"></div>
+              
+              <div class="orb-chip orb-chip-1">
+                <i class="bi bi-heart-pulse-fill text-danger"></i>
+                <span>Vitality & Prana</span>
+              </div>
+              
+              <div class="vitality-orb" aria-label="3D Floating Vitality Sphere">
+                <i class="bi bi-heart-pulse-fill orb-heart-icon" aria-hidden="true"></i>
+              </div>
+              
+              <div class="orb-chip orb-chip-2">
+                <i class="bi bi-stars text-warning"></i>
+                <span>100% Science Backed</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Animated Stat Counters Row (Full Width) -->
+          <div class="col-12">
             <div class="hero-stats-card reveal-on-scroll delay-400">
               <div class="row g-4 text-start justify-content-center">
                 <div class="col-6 col-md-3">
@@ -182,7 +215,6 @@
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 /**
  * JivanSathi — Premium Health Awareness & Holistic Wellness Platform
- * Interactive UI Engine & Client Logic
+ * Interactive UI Engine & Client Logic (Enhanced Edition)
  * Brand: JivanSathi | "Your companion for a healthier life"
  * Author: Shubh Sharma, CSE, NIE Mysuru
  */
@@ -9,7 +9,93 @@ document.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
   // -------------------------------------------------------------------------
-  // 1. Navigation & Frosted Glass Scroll State
+  // 1. Theme Management (Light & Dark Wellness Mode with LocalStorage)
+  // -------------------------------------------------------------------------
+  const themeToggleBtn = document.getElementById('themeToggleBtn');
+  const themeIcon = document.getElementById('themeIcon');
+  const THEME_KEY = 'jivansathi_theme';
+
+  const applyTheme = (theme) => {
+    if (theme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      if (themeIcon) {
+        themeIcon.classList.remove('bi-moon-stars-fill');
+        themeIcon.classList.add('bi-sun-fill');
+        themeIcon.style.color = '#fbbf24';
+      }
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+      if (themeIcon) {
+        themeIcon.classList.remove('bi-sun-fill');
+        themeIcon.classList.add('bi-moon-stars-fill');
+        themeIcon.style.color = '';
+      }
+    }
+  };
+
+  // Determine initial theme: saved preference -> system preference -> default to light
+  let currentTheme = 'light';
+  try {
+    const savedTheme = localStorage.getItem(THEME_KEY);
+    if (savedTheme) {
+      currentTheme = savedTheme;
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      currentTheme = 'dark';
+    }
+  } catch (e) {
+    currentTheme = 'light';
+  }
+
+  applyTheme(currentTheme);
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+      currentTheme = (currentTheme === 'dark') ? 'light' : 'dark';
+      applyTheme(currentTheme);
+      try {
+        localStorage.setItem(THEME_KEY, currentTheme);
+      } catch (e) {
+        // Ignore quota limits
+      }
+    });
+  }
+
+  // -------------------------------------------------------------------------
+  // 2. Ambient Floating Bio-Particles Generator
+  // -------------------------------------------------------------------------
+  const particlesContainer = document.getElementById('particlesContainer');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (particlesContainer && !prefersReducedMotion) {
+    const particleCount = 22;
+    const fragment = document.createDocumentFragment();
+
+    for (let i = 0; i < particleCount; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'bio-particle';
+      if (Math.random() > 0.75) {
+        particle.classList.add('particle-gold');
+      }
+
+      const size = Math.floor(Math.random() * 4) + 3; // 3px to 6px
+      const left = Math.floor(Math.random() * 100); // 0% to 100%
+      const duration = Math.floor(Math.random() * 10) + 12; // 12s to 22s
+      const delay = Math.floor(Math.random() * 15); // 0s to 15s
+
+      particle.style.width = `${size}px`;
+      particle.style.height = `${size}px`;
+      particle.style.left = `${left}%`;
+      particle.style.animationDuration = `${duration}s`;
+      particle.style.animationDelay = `-${delay}s`;
+
+      fragment.appendChild(particle);
+    }
+
+    particlesContainer.appendChild(fragment);
+  }
+
+  // -------------------------------------------------------------------------
+  // 3. Navigation & Frosted Glass Scroll State
   // -------------------------------------------------------------------------
   const navbar = document.querySelector('.navbar-jivansathi');
   const navCollapse = document.getElementById('navbarJivanSathiNav');
@@ -25,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   window.addEventListener('scroll', handleNavbarScroll, { passive: true });
-  handleNavbarScroll(); // Initial check on load
+  handleNavbarScroll();
 
   // Close mobile navbar dropdown when clicking any nav link
   if (navCollapse) {
@@ -42,19 +128,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // -------------------------------------------------------------------------
-  // 2. Animated Stat Counters with IntersectionObserver
+  // 4. Animated Stat Counters with IntersectionObserver
   // -------------------------------------------------------------------------
   const statElements = document.querySelectorAll('.stat-number[data-counter-target]');
 
   if (statElements.length > 0) {
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
     const animateCounter = (element) => {
       const targetStr = element.getAttribute('data-counter-target');
       const suffix = element.getAttribute('data-counter-suffix') || '';
       const prefix = element.getAttribute('data-counter-prefix') || '';
       const targetNum = parseInt(targetStr, 10);
-      const duration = 1600; // ms
+      const duration = 1600;
 
       if (prefersReducedMotion || isNaN(targetNum)) {
         element.textContent = `${prefix}${targetStr}${suffix}`;
@@ -66,7 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const step = (timestamp) => {
         if (!startTime) startTime = timestamp;
         const progress = Math.min((timestamp - startTime) / duration, 1);
-        // Ease-out cubic formula
         const easeProgress = 1 - Math.pow(1 - progress, 3);
         const currentVal = Math.floor(easeProgress * targetNum);
 
@@ -95,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // -------------------------------------------------------------------------
-  // 3. Interactive Water Tracker (LocalStorage + 8 Clickable Glasses)
+  // 5. Interactive Water Tracker (LocalStorage + 8 Clickable Glasses)
   // -------------------------------------------------------------------------
   const waterTracker = (() => {
     const glasses = document.querySelectorAll('.water-glass-btn');
@@ -109,7 +192,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const STORAGE_KEY = 'jivansathi_water_intake';
     let currentGlasses = 0;
 
-    // Load saved intake from localStorage
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved !== null) {
@@ -132,7 +214,6 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const render = () => {
-      // Update glasses active state
       glasses.forEach((glass) => {
         const glassIndex = parseInt(glass.getAttribute('data-glass-index'), 10);
         if (glassIndex <= currentGlasses) {
@@ -144,31 +225,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      // Update counters
       if (counterText) counterText.textContent = `${currentGlasses} / 8`;
       const ml = currentGlasses * 250;
       if (mlText) mlText.textContent = `${ml} ml / 2000 ml`;
 
-      // Update progress bar
       const pct = Math.round((currentGlasses / 8) * 100);
       if (barFill) barFill.style.width = `${pct}%`;
 
-      // Update status message
       if (statusMsg) statusMsg.textContent = messages[currentGlasses] || messages[0];
 
-      // Save to localStorage
       try {
         localStorage.setItem(STORAGE_KEY, currentGlasses.toString());
       } catch (e) {
-        // Ignore localStorage quota errors
+        // Ignore quota limits
       }
     };
 
-    // Glass click handler
     glasses.forEach((glass) => {
       glass.addEventListener('click', () => {
         const idx = parseInt(glass.getAttribute('data-glass-index'), 10);
-        // If clicking on the exact current count, toggle it back by one
         if (idx === currentGlasses) {
           currentGlasses = Math.max(0, currentGlasses - 1);
         } else {
@@ -178,7 +253,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Quick +1 Glass button
     if (btnAdd) {
       btnAdd.addEventListener('click', () => {
         if (currentGlasses < 8) {
@@ -188,7 +262,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Reset button
     if (btnReset) {
       btnReset.addEventListener('click', () => {
         currentGlasses = 0;
@@ -196,12 +269,11 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Initial render
     render();
   })();
 
   // -------------------------------------------------------------------------
-  // 4. Image Gallery Modal Lightbox
+  // 6. Image Gallery Modal Lightbox
   // -------------------------------------------------------------------------
   const galleryItems = document.querySelectorAll('.gallery-item');
   const lightboxModalEl = document.getElementById('galleryLightboxModal');
@@ -233,7 +305,6 @@ document.addEventListener('DOMContentLoaded', () => {
         lightboxModal.show();
       });
 
-      // Keyboard accessibility (Enter/Space to open)
       item.setAttribute('tabindex', '0');
       item.setAttribute('role', 'button');
       item.addEventListener('keydown', (e) => {
@@ -246,7 +317,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // -------------------------------------------------------------------------
-  // 5. Contact Form Validation & Submission Feedback
+  // 7. Contact Form Validation & Submission Feedback
   // -------------------------------------------------------------------------
   const contactForm = document.getElementById('jivansathiContactForm');
   const contactAlert = document.getElementById('contactFormAlert');
@@ -261,13 +332,11 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Collect values for personal confirmation
       const nameInput = document.getElementById('contactName');
       const emailInput = document.getElementById('contactEmail');
       const userName = nameInput ? nameInput.value.trim() : 'Friend';
       const userEmail = emailInput ? emailInput.value.trim() : '';
 
-      // Show friendly success confirmation alert
       if (contactAlert) {
         contactAlert.innerHTML = `
           <div class="alert alert-success d-flex align-items-center border-0 shadow-sm rounded-3 py-3 px-3 mb-4" role="alert">
@@ -282,14 +351,13 @@ document.addEventListener('DOMContentLoaded', () => {
         contactAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
 
-      // Reset form
       contactForm.reset();
       contactForm.classList.remove('was-validated');
     });
   }
 
   // -------------------------------------------------------------------------
-  // 6. Back-to-Top Floating Button
+  // 8. Back-to-Top Floating Button
   // -------------------------------------------------------------------------
   const backToTopBtn = document.getElementById('btnBackToTop');
 
@@ -313,7 +381,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // -------------------------------------------------------------------------
-  // 7. Scroll Reveal Animation using IntersectionObserver
+  // 9. Scroll Reveal Animation using IntersectionObserver
   // -------------------------------------------------------------------------
   const revealElements = document.querySelectorAll('.reveal-on-scroll');
 

@@ -27,10 +27,13 @@ The website follows a fluid single-page architecture with smooth scrolling, fros
 ### 1. 🧭 Navigation Bar (Header)
 - **Glassmorphic Sticky Nav**: Seamlessly shifts from transparent over the hero to a frosted-glass backdrop (`backdrop-filter: blur(16px)`) with subtle shadow on scroll.
 - **Brand Wordmark & Logo Mark**: Inline SVG combining heart vitality and a green sprout leaf.
+- **Dark / Light Wellness Mode Switcher**: Seamless theme toggle in the navbar with `localStorage` memory and WCAG AAA compliant contrast so zero text ever vanishes.
 - **Scroll-Spy & Smooth Navigation**: Automatically updates the active section indicator.
 - **Mobile Responsive Drawer**: Clean, accessible hamburger collapse on smaller screens.
 
-### 2. 🌅 Hero Section
+### 2. 🌅 Hero Section & 3D Vitality Orb
+- **3D Floating Hero "Vitality Orb"**: Pure CSS 3D spherical core with multi-stop emerald radial gradients, specular lighting, pulsating heart core, rotating orbital rings, and floating status chips.
+- **Ambient Floating Bio-Particles System**: Dynamic, GPU-accelerated glowing emerald and amber wellness particles drifting gently in the background.
 - **Full Viewport Backdrop**: Atmospheric wellness imagery with a layered emerald-to-dark gradient overlay.
 - **Impactful Typography**: Single fluid `<h1>` headline utilizing `clamp()` typography paired with Plus Jakarta Sans and Inter.
 - **Dual CTA Buttons**: Quick links to explore lifestyle pillars or dive into the daily water tracker.
