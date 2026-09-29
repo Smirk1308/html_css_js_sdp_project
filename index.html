@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="JivanSathi — Your companion for a healthier life. Comprehensive health awareness, balanced nutrition, daily fitness, hydration tracking, and restorative sleep habits.">
+  <meta name="keywords" content="JivanSathi, health awareness, healthy lifestyle, nutrition, fitness, water tracker, sleep habits, mental wellness, NIE Mysuru">
+  <meta name="author" content="Shubh Sharma, CSE, NIE Mysuru">
+  <meta name="theme-color" content="#065f46">
+  
+  <title>JivanSathi | Your Companion for a Healthier Life</title>
+
+  <!-- Favicon (Inline SVG Health Leaf & Heart) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath fill='%2310b981' d='M16 3C8.82 3 3 8.82 3 16c0 5.6 3.53 10.38 8.5 12.23.4.08.7-.1.7-.38v-2.3c0-.3-.15-.55-.42-.64-3.35-1.12-4.08-3.9-4.08-3.9-.38-.96-.92-1.22-.92-1.22-.84-.57.06-.56.06-.56.92.06 1.41.95 1.41.95.82 1.4 2.16 1 2.68.76.08-.6.32-1 .59-1.23-2.67-.3-5.47-1.34-5.47-5.94 0-1.31.47-2.38 1.23-3.22-.12-.3-.54-1.52.12-3.17 0 0 1-.32 3.3 1.23.96-.27 1.98-.4 3-.4s2.04.13 3 .4c2.3-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.17.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.93.33.29.63.85.63 1.72v2.55c0 .28.3.47.71.38C25.47 26.38 29 21.6 29 16c0-7.18-5.82-13-13-13z'/%3E%3Cpath fill='%23f97316' d='M16 6a6 6 0 0 0-6 6c0 4.5 6 9 6 9s6-4.5 6-9a6 6 0 0 0-6-6z'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts: Plus Jakarta Sans (Headings) & Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3 CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Bootstrap Icons (CDN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbarJivanSathi" data-bs-offset="100" tabindex="0">
+
+  <!-- =========================================================================
+       1. NAVIGATION BAR (Frosted Glass Sticky Header)
+       ========================================================================= -->
+  <header>
+    <nav id="navbarJivanSathi" class="navbar navbar-expand-lg fixed-top navbar-jivansathi" aria-label="Main Navigation">
+      <div class="container">
+        <!-- Brand Wordmark with SVG Logo Mark -->
+        <a class="navbar-brand brand-wrapper" href="#hero">
+          <span class="brand-icon-badge" aria-hidden="true">
+            <!-- Inline SVG Logo Mark: Heart + Sprout Leaf -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" fill="rgba(255,255,255,0.2)"/>
+              <path d="M12 5v9" stroke="#ffffff"/>
+              <path d="M9 8c1.5 1 3 1 3 1" stroke="#a7f3d0"/>
+            </svg>
+          </span>
+          <span>JivanSathi<span class="brand-accent-dot">.</span></span>
+        </a>
+
+        <!-- Mobile Toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarJivanSathiNav" aria-controls="navbarJivanSathiNav" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="bi bi-list fs-2"></i>
+        </button>
+
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse" id="navbarJivanSathiNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-1">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#hero">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#lifestyle">Lifestyle</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#nutrition">Healthy Food</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#exercise">Exercise</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#habits">Sleep & Water</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#awareness">Awareness</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#gallery">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+            <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+              <a class="btn btn-jivansathi-primary btn-sm px-3 py-2" href="#habits">
+                <i class="bi bi-droplet-half me-1"></i> Water Tracker
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- =========================================================================
+       2. HERO SECTION
+       ========================================================================= -->
+  <main>
+    <section id="hero" class="hero-section" aria-label="Hero Overview">
+      <div class="container hero-content">
+        <div class="row align-items-center">
+          <div class="col-lg-10 col-xl-9 mx-auto text-center">
+            
+            <!-- Badge -->
+            <div class="reveal-on-scroll">
+              <span class="hero-pill-badge">
+                <i class="bi bi-shield-check"></i> Evidence-Based Holistic Wellness Platform
+              </span>
+            </div>
+
+            <!-- Single H1 Title -->
+            <h1 class="hero-title reveal-on-scroll delay-100">
+              Nurture Your Mind, Body & Vitality with <span class="text-gradient-hero">JivanSathi</span>
+            </h1>
+
+            <!-- Tagline & Description -->
+            <p class="hero-subtitle mx-auto reveal-on-scroll delay-200">
+              Your companion for a healthier life. Cultivate sustainable daily habits, clean nutrition, active movement, and deep recovery designed to help students and busy individuals flourish every day.
+            </p>
+
+            <!-- CTA Action Buttons -->
+            <div class="d-flex flex-wrap justify-content-center gap-3 reveal-on-scroll delay-300">
+              <a href="#lifestyle" class="btn btn-jivansathi-primary">
+                <span>Explore Wellness Pillars</span>
+                <i class="bi bi-arrow-down-circle"></i>
+              </a>
+              <a href="#habits" class="btn btn-jivansathi-outline">
+                <i class="bi bi-droplet-fill text-info"></i>
+                <span>Daily Water Tracker</span>
+              </a>
+            </div>
+
+            <!-- Animated Stat Counters Row -->
+            <div class="hero-stats-card reveal-on-scroll delay-400">
+              <div class="row g-4 text-start justify-content-center">
+                <div class="col-6 col-md-3">
+                  <div class="stat-item">
+                    <div class="stat-icon" aria-hidden="true">
+                      <i class="bi bi-droplet"></i>
+                    </div>
+                    <div>
+                      <div class="stat-number" data-counter-target="8" data-counter-suffix=" Glasses">8 Glasses</div>
+                      <p class="stat-label">Daily Hydration Goal</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-6 col-md-3">
+                  <div class="stat-item">
+                    <div class="stat-icon" aria-hidden="true">
+                      <i class="bi bi-moon-stars"></i>
+                    </div>
+                    <div>
+                      <div class="stat-number" data-counter-target="8" data-counter-suffix=" Hours">8 Hours</div>
+                      <p class="stat-label">Restorative Sleep</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-6 col-md-3">
+                  <div class="stat-item">
+                    <div class="stat-icon" aria-hidden="true">
+                      <i class="bi bi-heart-pulse"></i>
+                    </div>
+                    <div>
+                      <div class="stat-number" data-counter-target="30" data-counter-suffix=" Mins">30+ Mins</div>
+                      <p class="stat-label">Active Movement</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-6 col-md-3">
+                  <div class="stat-item">
+                    <div class="stat-icon" aria-hidden="true">
+                      <i class="bi bi-award"></i>
+                    </div>
+                    <div>
+                      <div class="stat-number" data-counter-target="100" data-counter-suffix="%">100%</div>
+                      <p class="stat-label">Science-Backed Tips</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Wave SVG Transition to Next Section -->
+      <div class="svg-divider svg-divider-bottom" aria-hidden="true">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,0 C150,90 350,-40 500,45 C650,130 900,10 1200,60 L1200,120 L0,120 Z" class="shape-fill-body"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         3. HEALTHY LIFESTYLE SECTION
+         ========================================================================= -->
+    <section id="lifestyle" class="section-padding" aria-labelledby="lifestyleHeading">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="section-tag">
+            <i class="bi bi-stars"></i> Foundation of Health
+          </span>
+          <h2 id="lifestyleHeading" class="section-title">The Four Pillars of a Vibrant Lifestyle</h2>
+          <p class="section-subtitle">
+            Sustainable health is not built on temporary trends, but on consistent daily rituals that harmonize your physical vitality, mental clarity, and biological rhythm.
+          </p>
+        </div>
+
+        <!-- 4 Core Pillars Grid -->
+        <div class="row g-4 mb-5">
+          <!-- Pillar 1 -->
+          <div class="col-md-6 col-lg-3">
+            <article class="pillar-card reveal-on-scroll delay-100">
+              <div class="pillar-icon-box" aria-hidden="true">
+                <i class="bi bi-sun"></i>
+              </div>
+              <h3>Circadian Alignment</h3>
+              <p>Syncing your body clock with natural daylight triggers optimal cortisol in the morning and restful melatonin secretion at night.</p>
+              <ul class="pillar-check-list">
+                <li><i class="bi bi-check-circle-fill"></i> Morning sunlight (10–15 mins)</li>
+                <li><i class="bi bi-check-circle-fill"></i> Fixed wake-up schedule</li>
+                <li><i class="bi bi-check-circle-fill"></i> Evening screen dimming</li>
+              </ul>
+            </article>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="col-md-6 col-lg-3">
+            <article class="pillar-card reveal-on-scroll delay-200">
+              <div class="pillar-icon-box" aria-hidden="true">
+                <i class="bi bi-emoji-smile"></i>
+              </div>
+              <h3>Stress Resilience</h3>
+              <p>Chronic psychological tension elevates inflammatory markers. Deliberate mindfulness and breathwork reset the autonomic nervous system.</p>
+              <ul class="pillar-check-list">
+                <li><i class="bi bi-check-circle-fill"></i> 4-7-8 calming breathwork</li>
+                <li><i class="bi bi-check-circle-fill"></i> 10 min daily meditation</li>
+                <li><i class="bi bi-check-circle-fill"></i> Nature walks & digital breaks</li>
+              </ul>
+            </article>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="col-md-6 col-lg-3">
+            <article class="pillar-card reveal-on-scroll delay-300">
+              <div class="pillar-icon-box" aria-hidden="true">
+                <i class="bi bi-cup-hot"></i>
+              </div>
+              <h3>Cellular Nutrition</h3>
+              <p>Fueling your cells with unrefined whole foods, vibrant polyphenols, and sufficient fiber protects against metabolic decline.</p>
+              <ul class="pillar-check-list">
+                <li><i class="bi bi-check-circle-fill"></i> 30+ plant varieties weekly</li>
+                <li><i class="bi bi-check-circle-fill"></i> Minimally processed meals</li>
+                <li><i class="bi bi-check-circle-fill"></i> Balanced glycemic index</li>
+              </ul>
+            </article>
+          </div>
+
+          <!-- Pillar 4 -->
+          <div class="col-md-6 col-lg-3">
+            <article class="pillar-card reveal-on-scroll delay-400">
+              <div class="pillar-icon-box" aria-hidden="true">
+                <i class="bi bi-activity"></i>
+              </div>
+              <h3>Active Mobility</h3>
+              <p>Sedentary study routines tighten posture and slow lymphatic drainage. Micro-movements throughout the day maintain joint integrity.</p>
+              <ul class="pillar-check-list">
+                <li><i class="bi bi-check-circle-fill"></i> 2-min stretch every hour</li>
+                <li><i class="bi bi-check-circle-fill"></i> Ergonomic desk setup</li>
+                <li><i class="bi bi-check-circle-fill"></i> 8,000+ daily steps target</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+
+        <!-- Daily Ideal Routine Timeline -->
+        <div class="timeline-card reveal-on-scroll">
+          <div class="row align-items-center mb-4">
+            <div class="col-lg-8">
+              <h3 class="mb-1">Your Ideal 24-Hour Wellness Blueprint</h3>
+              <p class="text-muted mb-0 small">A practical, student-friendly cadence designed to optimize concentration, digestion, and physical stamina.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+              <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 rounded-pill fw-semibold">
+                <i class="bi bi-clock-history me-1"></i> Recommended Daily Cadence
+              </span>
+            </div>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+              <div class="timeline-step">
+                <div class="timeline-dot" aria-hidden="true"></div>
+                <h4 class="fs-6 fw-bold mb-1 text-primary">06:30 AM — Awakening</h4>
+                <p class="small text-muted mb-1">500ml water with pinch of electrolytes, 10 minutes of natural sky exposure to calibrate your inner clock.</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <div class="timeline-step">
+                <div class="timeline-dot" aria-hidden="true"></div>
+                <h4 class="fs-6 fw-bold mb-1 text-primary">12:30 PM — Sustained Energy</h4>
+                <p class="small text-muted mb-1">Fiber-rich colorful lunch, 15-minute gentle stroll to prevent post-prandial blood sugar spikes and drowsiness.</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <div class="timeline-step">
+                <div class="timeline-dot" aria-hidden="true"></div>
+                <h4 class="fs-6 fw-bold mb-1 text-primary">05:30 PM — Movement</h4>
+                <p class="small text-muted mb-1">30–45 minutes of moderate workout, functional calisthenics, or yoga to release accumulated academic fatigue.</p>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <div class="timeline-step">
+                <div class="timeline-dot" aria-hidden="true"></div>
+                <h4 class="fs-6 fw-bold mb-1 text-primary">10:15 PM — Digital Sunset</h4>
+                <p class="small text-muted mb-1">Screens turned off, cool room ventilation, light gratitude reading or meditation leading into deep restorative rest.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Wave SVG Transition to Food Section -->
+    <div class="svg-divider" style="position:relative; margin-top:-20px;" aria-hidden="true">
+      <svg viewBox="0 0 1200 60" preserveAspectRatio="none">
+        <path d="M0,0 C300,50 600,-20 900,40 L1200,10 L1200,60 L0,60 Z" class="shape-fill-alt"></path>
+      </svg>
+    </div>
+
+    <!-- =========================================================================
+         4. HEALTHY FOOD & NUTRITION SECTION
+         ========================================================================= -->
+    <section id="nutrition" class="section-padding bg-alt-section" aria-labelledby="nutritionHeading">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="section-tag accent">
+            <i class="bi bi-egg-fried"></i> Wholesome Nutrition
+          </span>
+          <h2 id="nutritionHeading" class="section-title">Nourish with Purpose: 6 Power Food Groups</h2>
+          <p class="section-subtitle">
+            Food is biological information. Choosing nutrient-dense, unprocessed foods enhances cognitive function, balances moods, and strengthens your natural immune shield.
+          </p>
+        </div>
+
+        <!-- 6 Food Cards Grid -->
+        <div class="row g-4 mb-5">
+          <!-- Food 1 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="food-card reveal-on-scroll delay-100">
+              <div class="food-img-wrapper">
+                <img src="images/food-rainbow-bowl.jpg" alt="Vibrant rainbow salad bowl with fresh greens, vegetables and chickpeas" loading="lazy">
+                <span class="food-category-badge">Greens & Veggies</span>
+              </div>
+              <div class="food-card-body">
+                <h3 class="food-card-title">Rainbow Phytonutrient Bowls</h3>
+                <p class="food-card-desc">Dense in anthocyanins, carotenoids, and insoluble dietary fiber to nourish your microbiome and combat cellular oxidation.</p>
+                <div class="food-pill-tags">
+                  <span class="food-pill">Antioxidants</span>
+                  <span class="food-pill">High Fiber</span>
+                  <span class="food-pill">Low Glycemic</span>
+                </div>
+                <div class="nutrition-perks">
+                  <span><i class="bi bi-fire text-warning me-1"></i> ~280 kcal</span>
+                  <span><i class="bi bi-shield-check text-success me-1"></i> Immunity Booster</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Food 2 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="food-card reveal-on-scroll delay-200">
+              <div class="food-img-wrapper">
+                <img src="images/food-nuts-seeds.jpg" alt="Assorted almonds, walnuts, pumpkin seeds and chia seeds" loading="lazy">
+                <span class="food-category-badge">Healthy Fats</span>
+              </div>
+              <div class="food-card-body">
+                <h3 class="food-card-title">Heart-Healthy Nuts & Seeds</h3>
+                <p class="food-card-desc">Rich in ALA Omega-3 fatty acids, magnesium, and Vitamin E to reinforce neuron membranes and maintain arterial elasticity.</p>
+                <div class="food-pill-tags">
+                  <span class="food-pill accent-pill">Omega-3</span>
+                  <span class="food-pill">Magnesium</span>
+                  <span class="food-pill">Brain Health</span>
+                </div>
+                <div class="nutrition-perks">
+                  <span><i class="bi bi-fire text-warning me-1"></i> Handful (30g)</span>
+                  <span><i class="bi bi-lightning-charge text-primary me-1"></i> Cognitive Focus</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Food 3 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="food-card reveal-on-scroll delay-300">
+              <div class="food-img-wrapper">
+                <img src="images/food-plant-protein.jpg" alt="Steamed edamame, lentils, tofu and wholesome plant protein bowl" loading="lazy">
+                <span class="food-category-badge">Lean Protein</span>
+              </div>
+              <div class="food-card-body">
+                <h3 class="food-card-title">Plant Proteins & Legumes</h3>
+                <p class="food-card-desc">Lentils, chickpeas, beans, and sprouts provide clean essential amino acids for tissue repair and long-lasting satiety.</p>
+                <div class="food-pill-tags">
+                  <span class="food-pill">Essential Aminos</span>
+                  <span class="food-pill">Iron & Folate</span>
+                  <span class="food-pill">Zero Cholest.</span>
+                </div>
+                <div class="nutrition-perks">
+                  <span><i class="bi bi-fire text-warning me-1"></i> 18g Protein/cup</span>
+                  <span><i class="bi bi-gear-wide-connected text-success me-1"></i> Muscle Recovery</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Food 4 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="food-card reveal-on-scroll delay-100">
+              <div class="food-img-wrapper">
+                <img src="images/food-berries-citrus.jpg" alt="Fresh mixed berries, blueberries, strawberries and orange slices" loading="lazy">
+                <span class="food-category-badge">Vital Fruits</span>
+              </div>
+              <div class="food-card-body">
+                <h3 class="food-card-title">Hydrating Berries & Citrus</h3>
+                <p class="food-card-desc">Bursting with Vitamin C, bioflavonoids, and natural electrolytes to promote collagen synthesis and fight free radicals.</p>
+                <div class="food-pill-tags">
+                  <span class="food-pill accent-pill">Vitamin C</span>
+                  <span class="food-pill">Skin Radiance</span>
+                  <span class="food-pill">Naturally Sweet</span>
+                </div>
+                <div class="nutrition-perks">
+                  <span><i class="bi bi-fire text-warning me-1"></i> ~65 kcal</span>
+                  <span><i class="bi bi-droplet-fill text-info me-1"></i> Hydrating Snack</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Food 5 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="food-card reveal-on-scroll delay-200">
+              <div class="food-img-wrapper">
+                <img src="images/food-fermented-gut.jpg" alt="Fresh curd, yogurt with seeds and probiotic fermented foods" loading="lazy">
+                <span class="food-category-badge">Gut Microbiome</span>
+              </div>
+              <div class="food-card-body">
+                <h3 class="food-card-title">Probiotic & Fermented Foods</h3>
+                <p class="food-card-desc">Traditional curd, kefir, and fermented greens deliver billions of live beneficial bacteria to regulate the gut-brain axis.</p>
+                <div class="food-pill-tags">
+                  <span class="food-pill">Live Cultures</span>
+                  <span class="food-pill">Enzymatic Health</span>
+                  <span class="food-pill">Bioavailable</span>
+                </div>
+                <div class="nutrition-perks">
+                  <span><i class="bi bi-fire text-warning me-1"></i> Daily Portion</span>
+                  <span><i class="bi bi-heart-pulse-fill text-danger me-1"></i> 70% Immune System</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Food 6 -->
+          <div class="col-md-6 col-lg-4">
+            <article class="food-card reveal-on-scroll delay-300">
+              <div class="food-img-wrapper">
+                <img src="images/food-whole-grains.jpg" alt="Golden whole oats, quinoa, brown rice and millets in wooden bowls" loading="lazy">
+                <span class="food-category-badge">Complex Carbohydrates</span>
+              </div>
+              <div class="food-card-body">
+                <h3 class="food-card-title">Ancient Millets & Whole Grains</h3>
+                <p class="food-card-desc">Ragi, jowar, bajra, and oats metabolize gradually to prevent mid-day slumps and sustain steady classroom and workplace focus.</p>
+                <div class="food-pill-tags">
+                  <span class="food-pill">Beta-Glucan</span>
+                  <span class="food-pill">B-Complex</span>
+                  <span class="food-pill">Slow Digesting</span>
+                </div>
+                <div class="nutrition-perks">
+                  <span><i class="bi bi-fire text-warning me-1"></i> Steady Release</span>
+                  <span><i class="bi bi-battery-charging text-success me-1"></i> Stamina Reserve</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- The Healthy Plate Method Banner -->
+        <div class="balanced-plate-banner reveal-on-scroll">
+          <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+              <span class="badge bg-warning text-dark mb-2 px-3 py-1 rounded-pill fw-bold">Harvard Healthy Plate Method</span>
+              <h3 class="mb-3">The Universal Golden Rule of Every Meal</h3>
+              <p class="text-white-50 mb-0">
+                You don't need complex calorie counting to eat healthily. Visualize your meal plate divided into three intuitive zones to achieve effortless nutritional balance at every dining session.
+              </p>
+            </div>
+            <div class="col-lg-6">
+              <div class="row g-3">
+                <div class="col-4">
+                  <div class="plate-proportion-item">
+                    <div class="plate-percent">1/2</div>
+                    <div class="fw-bold text-white small mt-1">Vegetables & Fruit</div>
+                    <span class="badge bg-success-subtle text-success small mt-1">Fiber & Color</span>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="plate-proportion-item">
+                    <div class="plate-percent">1/4</div>
+                    <div class="fw-bold text-white small mt-1">Whole Grains</div>
+                    <span class="badge bg-warning-subtle text-warning small mt-1">Complex Energy</span>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="plate-proportion-item">
+                    <div class="plate-percent">1/4</div>
+                    <div class="fw-bold text-white small mt-1">Healthy Protein</div>
+                    <span class="badge bg-info-subtle text-info small mt-1">Cellular Repair</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         5. EXERCISE & PHYSICAL FITNESS SECTION (Tabbed Navigation)
+         ========================================================================= -->
+    <section id="exercise" class="section-padding" aria-labelledby="exerciseHeading">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="section-tag">
+            <i class="bi bi-heart-pulse"></i> Movement Is Medicine
+          </span>
+          <h2 id="exerciseHeading" class="section-title">Structured Movement for Longevity & Stamina</h2>
+          <p class="section-subtitle">
+            Regular physical exertion improves insulin sensitivity, elevates BDNF (brain-derived neurotrophic factor) for sharp memory, and shields cardiovascular health.
+          </p>
+        </div>
+
+        <!-- Pill Navigation Tabs -->
+        <ul class="nav exercise-nav-pills" id="exerciseTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="cardio-tab" data-bs-toggle="pill" data-bs-target="#tab-cardio" type="button" role="tab" aria-controls="tab-cardio" aria-selected="true">
+              <i class="bi bi-speedometer2"></i> Cardio & Stamina
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="strength-tab" data-bs-toggle="pill" data-bs-target="#tab-strength" type="button" role="tab" aria-controls="tab-strength" aria-selected="false">
+              <i class="bi bi-shield-shaded"></i> Strength & Core
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="yoga-tab" data-bs-toggle="pill" data-bs-target="#tab-yoga" type="button" role="tab" aria-controls="tab-yoga" aria-selected="false">
+              <i class="bi bi-flower1"></i> Yoga & Flexibility
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="stretch-tab" data-bs-toggle="pill" data-bs-target="#tab-stretch" type="button" role="tab" aria-controls="tab-stretch" aria-selected="false">
+              <i class="bi bi-person-walking"></i> Desk Stretches & Posture
+            </button>
+          </li>
+        </ul>
+
+        <!-- Tab Panes Content -->
+        <div class="tab-content" id="exerciseTabContent">
+
+          <!-- Tab 1: Cardio -->
+          <div class="tab-pane fade show active" id="tab-cardio" role="tabpanel" aria-labelledby="cardio-tab">
+            <div class="exercise-tab-card">
+              <div class="row g-0 align-items-stretch">
+                <div class="col-lg-5">
+                  <img src="images/exercise-cardio.jpg" class="exercise-tab-img" alt="Person running outdoors on a scenic nature trail" loading="lazy">
+                </div>
+                <div class="col-lg-7">
+                  <div class="exercise-tab-content">
+                    <span class="intensity-badge vigorous">
+                      <i class="bi bi-lightning-fill"></i> Aerobic Capacity • Zone 2 & HIIT
+                    </span>
+                    <h3 class="mb-3">Aerobic Conditioning & Heart Vitality</h3>
+                    <p class="text-muted">
+                      Cardiovascular exercise enhances capillary density in muscles and pumps oxygen-rich blood to the brain. Incorporate brisk walking, cycling, jogging, or skipping to keep your resting heart rate healthy.
+                    </p>
+
+                    <div class="exercise-stat-grid">
+                      <div class="exercise-stat-box">
+                        <div class="label">Target Frequency</div>
+                        <p class="value">150 mins / week</p>
+                      </div>
+                      <div class="exercise-stat-box">
+                        <div class="label">Primary Impact</div>
+                        <p class="value">VO2 Max & Cardiac Output</p>
+                      </div>
+                    </div>
+
+                    <div class="pro-tip-callout mb-3">
+                      <strong><i class="bi bi-lightbulb-fill text-warning me-1"></i> Student Action Tip:</strong> The "Zone 2 Talk Test" — exercise at a pace where you can comfortably speak full sentences without gasping. 30 minutes of brisk walking 5 days a week achieves the full clinical benchmark.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 2: Strength -->
+          <div class="tab-pane fade" id="tab-strength" role="tabpanel" aria-labelledby="strength-tab">
+            <div class="exercise-tab-card">
+              <div class="row g-0 align-items-stretch">
+                <div class="col-lg-5">
+                  <img src="images/exercise-strength.jpg" class="exercise-tab-img" alt="Fitness enthusiast performing bodyweight calisthenics workout">
+                </div>
+                <div class="col-lg-7">
+                  <div class="exercise-tab-content">
+                    <span class="intensity-badge moderate">
+                      <i class="bi bi-fire"></i> Resistance Training • Muscle & Bone
+                    </span>
+                    <h3 class="mb-3">Functional Bodyweight & Resistance Training</h3>
+                    <p class="text-muted">
+                      Skeletal muscle is our primary metabolic sink for glucose. Preserving lean muscle tissue through push-ups, squats, lunges, and planks prevents posture decline and accelerates resting metabolism.
+                    </p>
+
+                    <div class="exercise-stat-grid">
+                      <div class="exercise-stat-box">
+                        <div class="label">Target Frequency</div>
+                        <p class="value">2–3 Days / week</p>
+                      </div>
+                      <div class="exercise-stat-box">
+                        <div class="label">Primary Impact</div>
+                        <p class="value">Bone Mineral Density & Core</p>
+                      </div>
+                    </div>
+
+                    <div class="pro-tip-callout mb-3">
+                      <strong><i class="bi bi-lightbulb-fill text-warning me-1"></i> Form Over Weight:</strong> Perfect execution prevents injury. Focus on controlled eccentric (lowering) phases of 3 seconds per repetition to maximize muscle fiber activation without heavy weights.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 3: Yoga -->
+          <div class="tab-pane fade" id="tab-yoga" role="tabpanel" aria-labelledby="yoga-tab">
+            <div class="exercise-tab-card">
+              <div class="row g-0 align-items-stretch">
+                <div class="col-lg-5">
+                  <img src="images/exercise-yoga.jpg" class="exercise-tab-img" alt="Peaceful yoga pose outdoors in natural morning sunlight">
+                </div>
+                <div class="col-lg-7">
+                  <div class="exercise-tab-content">
+                    <span class="intensity-badge moderate">
+                      <i class="bi bi-peace"></i> Mind-Body Harmony • Flexibility
+                    </span>
+                    <h3 class="mb-3">Vinyasa, Asanas & Joint Mobility</h3>
+                    <p class="text-muted">
+                      Yoga bridges physical posture with conscious respiration. Classical sequences like Surya Namaskar (Sun Salutations) activate all primary muscle groups while reducing circulating cortisol levels.
+                    </p>
+
+                    <div class="exercise-stat-grid">
+                      <div class="exercise-stat-box">
+                        <div class="label">Target Frequency</div>
+                        <p class="value">3–4 Sessions / week</p>
+                      </div>
+                      <div class="exercise-stat-box">
+                        <div class="label">Primary Impact</div>
+                        <p class="value">Fascia Health & Vagal Tone</p>
+                      </div>
+                    </div>
+
+                    <div class="pro-tip-callout mb-3">
+                      <strong><i class="bi bi-lightbulb-fill text-warning me-1"></i> Breathing Harmony:</strong> Inhale during expansive postures (like cobra or upward dog) and exhale during forward bends. Never hold your breath through deep isometric poses.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 4: Desk Stretches -->
+          <div class="tab-pane fade" id="tab-stretch" role="tabpanel" aria-labelledby="stretch-tab">
+            <div class="exercise-tab-card">
+              <div class="row g-0 align-items-stretch">
+                <div class="col-lg-5">
+                  <img src="images/exercise-stretching.jpg" class="exercise-tab-img" alt="Person doing posture alignment and back stretching exercises">
+                </div>
+                <div class="col-lg-7">
+                  <div class="exercise-tab-content">
+                    <span class="intensity-badge moderate">
+                      <i class="bi bi-laptop"></i> Posture Decompression • Desk Workers
+                    </span>
+                    <h3 class="mb-3">Micro-Movements & Anti-Sedentary Drills</h3>
+                    <p class="text-muted">
+                      Prolonged coding, studying, or laptop use leads to forward head posture ("tech neck") and tight hip flexors. Reversing these positions every 60 minutes prevents chronic lumbar tension.
+                    </p>
+
+                    <div class="exercise-stat-grid">
+                      <div class="exercise-stat-box">
+                        <div class="label">Target Frequency</div>
+                        <p class="value">2 mins every hour</p>
+                      </div>
+                      <div class="exercise-stat-box">
+                        <div class="label">Primary Impact</div>
+                        <p class="value">Spinal Decompression</p>
+                      </div>
+                    </div>
+
+                    <div class="pro-tip-callout mb-3">
+                      <strong><i class="bi bi-lightbulb-fill text-warning me-1"></i> The 20-20-20 Rule:</strong> Every 20 minutes, look at an object 20 feet away for 20 seconds to prevent optical strain, accompanied by 5 shoulder rolls and chin retractions.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         6. SLEEP & WATER TIPS (Interactive Tracker & Sleep Hygiene)
+         ========================================================================= -->
+    <section id="habits" class="section-padding bg-alt-section" aria-labelledby="habitsHeading">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="section-tag accent">
+            <i class="bi bi-droplet-half"></i> Daily Regeneration
+          </span>
+          <h2 id="habitsHeading" class="section-title">Hydration & Rest: The Unsung Superpowers</h2>
+          <p class="section-subtitle">
+            Optimal cognitive performance depends on cellular hydration and uninterrupted sleep cycles. Interactive tools to track your daily intake and reset your sleep hygiene.
+          </p>
+        </div>
+
+        <div class="row g-4 align-items-stretch">
+
+          <!-- Left Column: Science-Backed Sleep Architecture -->
+          <div class="col-lg-6">
+            <div class="sleep-card reveal-on-scroll delay-100">
+              <div class="d-flex align-items-center gap-3 mb-4">
+                <div class="brand-icon-badge" style="background: linear-gradient(135deg, #1e293b, #0f172a);">
+                  <i class="bi bi-moon-stars-fill text-warning"></i>
+                </div>
+                <div>
+                  <h3 class="mb-1 fs-4">Restorative Sleep Hygiene</h3>
+                  <p class="text-muted small mb-0">5 clinical principles for Stage 3 slow-wave & REM sleep</p>
+                </div>
+              </div>
+
+              <!-- Sleep Steps Checklist -->
+              <div class="sleep-step-item">
+                <div class="sleep-step-icon" aria-hidden="true">
+                  <i class="bi bi-alarm"></i>
+                </div>
+                <div class="sleep-step-content">
+                  <h4>Consistent Sleep Window</h4>
+                  <p>Maintain consistent bed and wake times (even on weekends) to anchor your biological suprachiasmatic nucleus.</p>
+                </div>
+              </div>
+
+              <div class="sleep-step-item">
+                <div class="sleep-step-icon" aria-hidden="true">
+                  <i class="bi bi-phone"></i>
+                </div>
+                <div class="sleep-step-content">
+                  <h4>Blue-Light Curfew (45 Mins Prior)</h4>
+                  <p>Electronic screens suppress natural melatonin. Switch to warm book reading or amber ambient lighting.</p>
+                </div>
+              </div>
+
+              <div class="sleep-step-item">
+                <div class="sleep-step-icon" aria-hidden="true">
+                  <i class="bi bi-thermometer-half"></i>
+                </div>
+                <div class="sleep-step-content">
+                  <h4>Cool Room Temperature (18°–21°C)</h4>
+                  <p>Core body temperature must drop by ~1°C to initiate deep slow-wave sleep. Ensure good cross-ventilation.</p>
+                </div>
+              </div>
+
+              <div class="sleep-step-item">
+                <div class="sleep-step-icon" aria-hidden="true">
+                  <i class="bi bi-cup"></i>
+                </div>
+                <div class="sleep-step-content">
+                  <h4>Caffeine Cut-Off at 2:00 PM</h4>
+                  <p>Caffeine has a biological half-life of 5–7 hours. Eliminating late stimulants protects deep REM architecture.</p>
+                </div>
+              </div>
+
+              <div class="sleep-step-item">
+                <div class="sleep-step-icon" aria-hidden="true">
+                  <i class="bi bi-journal-text"></i>
+                </div>
+                <div class="sleep-step-content">
+                  <h4>Cognitive "Brain Dump" Journaling</h4>
+                  <p>Write tomorrow's to-do list on paper before bed to alleviate sleep-onset insomnia and mental clutter.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Water Tracker -->
+          <div class="col-lg-6">
+            <div class="water-card reveal-on-scroll delay-200">
+              <div class="d-flex align-items-center gap-3 mb-4">
+                <div class="brand-icon-badge" style="background: linear-gradient(135deg, #0284c7, #0369a1);">
+                  <i class="bi bi-droplet-fill text-white"></i>
+                </div>
+                <div>
+                  <h3 class="mb-1 fs-4">Interactive Hydration Tracker</h3>
+                  <p class="text-muted small mb-0">Tap the glasses to log your daily intake (Saved in browser)</p>
+                </div>
+              </div>
+
+              <!-- Water Progress Box -->
+              <div class="water-progress-box">
+                <div class="water-progress-header">
+                  <div>
+                    <span class="text-white-50 text-uppercase fw-bold small">Current Intake</span>
+                    <div class="water-counter-text" id="waterGlassesCount">0 / 8</div>
+                  </div>
+                  <div class="text-end">
+                    <span class="text-white-50 text-uppercase fw-bold small">Volume</span>
+                    <div class="water-ml-text fw-bold" id="waterMlText">0 ml / 2000 ml</div>
+                  </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="water-bar-wrapper" role="progressbar" aria-label="Daily Hydration Progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                  <div class="water-bar-fill" id="waterBarFill"></div>
+                </div>
+
+                <!-- Live Status Message -->
+                <p class="water-status-message" id="waterStatusMsg">
+                  Start your hydration journey! 1 glass = 250ml 💧
+                </p>
+              </div>
+
+              <!-- 8 Clickable Water Glasses Grid -->
+              <div class="water-glasses-grid" role="group" aria-label="8 Daily Water Glasses">
+                <!-- Glass 1 -->
+                <button type="button" class="water-glass-btn" data-glass-index="1" aria-label="Glass 1 - 250ml" aria-pressed="false">
+                  <svg class="glass-svg" viewBox="0 0 24 24">
+                    <path d="M5 2h14l-2 18a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L5 2zm2 2l1.6 14.4a.5.5 0 0 0 .5.4h5.8a.5.5 0 0 0 .5-.4L17 4H7z"/>
+                  </svg>
+                  <span class="glass-number">250ml</span>
+                </button>
+
+                <!-- Glass 2 -->
+                <button type="button" class="water-glass-btn" data-glass-index="2" aria-label="Glass 2 - 500ml" aria-pressed="false">
+                  <svg class="glass-svg" viewBox="0 0 24 24">
+                    <path d="M5 2h14l-2 18a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L5 2zm2 2l1.6 14.4a.5.5 0 0 0 .5.4h5.8a.5.5 0 0 0 .5-.4L17 4H7z"/>
+                  </svg>
+                  <span class="glass-number">500ml</span>
+                </button>
+
+                <!-- Glass 3 -->
+                <button type="button" class="water-glass-btn" data-glass-index="3" aria-label="Glass 3 - 750ml" aria-pressed="false">
+                  <svg class="glass-svg" viewBox="0 0 24 24">
+                    <path d="M5 2h14l-2 18a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L5 2zm2 2l1.6 14.4a.5.5 0 0 0 .5.4h5.8a.5.5 0 0 0 .5-.4L17 4H7z"/>
+                  </svg>
+                  <span class="glass-number">750ml</span>
+                </button>
+
+                <!-- Glass 4 -->
+                <button type="button" class="water-glass-btn" data-glass-index="4" aria-label="Glass 4 - 1000ml" aria-pressed="false">
+                  <svg class="glass-svg" viewBox="0 0 24 24">
+                    <path d="M5 2h14l-2 18a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L5 2zm2 2l1.6 14.4a.5.5 0 0 0 .5.4h5.8a.5.5 0 0 0 .5-.4L17 4H7z"/>
+                  </svg>
+                  <span class="glass-number">1000ml</span>
+                </button>
+
+                <!-- Glass 5 -->
+                <button type="button" class="water-glass-btn" data-glass-index="5" aria-label="Glass 5 - 1250ml" aria-pressed="false">
+                  <svg class="glass-svg" viewBox="0 0 24 24">
+                    <path d="M5 2h14l-2 18a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L5 2zm2 2l1.6 14.4a.5.5 0 0 0 .5.4h5.8a.5.5 0 0 0 .5-.4L17 4H7z"/>
+                  </svg>
+                  <span class="glass-number">1250ml</span>
+                </button>
+
+                <!-- Glass 6 -->
+                <button type="button" class="water-glass-btn" data-glass-index="6" aria-label="Glass 6 - 1500ml" aria-pressed="false">
+                  <svg class="glass-svg" viewBox="0 0 24 24">
+                    <path d="M5 2h14l-2 18a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L5 2zm2 2l1.6 14.4a.5.5 0 0 0 .5.4h5.8a.5.5 0 0 0 .5-.4L17 4H7z"/>
+                  </svg>
+                  <span class="glass-number">1500ml</span>
+                </button>
+
+                <!-- Glass 7 -->
+                <button type="button" class="water-glass-btn" data-glass-index="7" aria-label="Glass 7 - 1750ml" aria-pressed="false">
+                  <svg class="glass-svg" viewBox="0 0 24 24">
+                    <path d="M5 2h14l-2 18a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L5 2zm2 2l1.6 14.4a.5.5 0 0 0 .5.4h5.8a.5.5 0 0 0 .5-.4L17 4H7z"/>
+                  </svg>
+                  <span class="glass-number">1750ml</span>
+                </button>
+
+                <!-- Glass 8 -->
+                <button type="button" class="water-glass-btn" data-glass-index="8" aria-label="Glass 8 - 2000ml" aria-pressed="false">
+                  <svg class="glass-svg" viewBox="0 0 24 24">
+                    <path d="M5 2h14l-2 18a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L5 2zm2 2l1.6 14.4a.5.5 0 0 0 .5.4h5.8a.5.5 0 0 0 .5-.4L17 4H7z"/>
+                  </svg>
+                  <span class="glass-number">2000ml</span>
+                </button>
+              </div>
+
+              <!-- Quick Control Buttons -->
+              <div class="water-controls">
+                <button type="button" class="btn-water-add" id="btnAddGlass">
+                  <i class="bi bi-plus-circle me-1"></i> Quick Add (+1 Glass)
+                </button>
+                <button type="button" class="btn-water-reset" id="btnResetWater">
+                  <i class="bi bi-arrow-counterclockwise me-1"></i> Reset
+                </button>
+              </div>
+
+              <div class="mt-3 text-center">
+                <span class="text-muted small">
+                  <i class="bi bi-info-circle me-1"></i> Hydration benefits: Elevates focus by 14%, prevents tension headaches, and promotes kidney clearance.
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         7. HEALTH AWARENESS INFORMATION (Accordion)
+         ========================================================================= -->
+    <section id="awareness" class="section-padding" aria-labelledby="awarenessHeading">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="section-tag">
+            <i class="bi bi-shield-heart"></i> Essential Knowledge
+          </span>
+          <h2 id="awarenessHeading" class="section-title">Health Awareness, Facts & Prevention</h2>
+          <p class="section-subtitle">
+            Empower yourself with scientifically verified health literacy. Demystify pervasive medical myths and learn proactive strategies to prevent modern lifestyle diseases.
+          </p>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-10 col-xl-9">
+            
+            <div class="accordion awareness-accordion" id="accordionAwareness">
+
+              <!-- Item 1: Myths vs Facts -->
+              <div class="accordion-item reveal-on-scroll delay-100">
+                <h3 class="accordion-header" id="headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <span class="accordion-icon-wrap" aria-hidden="true">
+                      <i class="bi bi-patch-question-fill"></i>
+                    </span>
+                    Popular Health Myths vs. Scientific Facts
+                  </button>
+                </h3>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionAwareness">
+                  <div class="accordion-body">
+                    <p class="mb-3 text-muted">Clearing the fog around viral health trends with verified physiological science:</p>
+                    
+                    <div class="myth-fact-box">
+                      <div class="d-flex align-items-center gap-2 mb-1">
+                        <span class="badge-myth">MYTH</span>
+                        <strong class="text-danger small">"Skipping meals or extreme fasting is the fastest way to lose body fat."</strong>
+                      </div>
+                      <div class="d-flex align-items-start gap-2 mt-2">
+                        <span class="badge-fact">FACT</span>
+                        <p class="small mb-0 text-dark">Prolonged unguided starvation triggers metabolic down-regulation (loss of active thyroid T3) and forces muscle breakdown. Balanced, protein-rich caloric control produces sustainable fat reduction.</p>
+                      </div>
+                    </div>
+
+                    <div class="myth-fact-box">
+                      <div class="d-flex align-items-center gap-2 mb-1">
+                        <span class="badge-myth">MYTH</span>
+                        <strong class="text-danger small">"Cracking your knuckles causes arthritis and joint deformation."</strong>
+                      </div>
+                      <div class="d-flex align-items-start gap-2 mt-2">
+                        <span class="badge-fact">FACT</span>
+                        <p class="small mb-0 text-dark">The popping sound is simply the cavitation (rapid formation and collapse) of gas bubbles in synovial fluid. Decades of clinical rheumatology studies confirm it does not cause arthritis.</p>
+                      </div>
+                    </div>
+
+                    <div class="myth-fact-box mb-0">
+                      <div class="d-flex align-items-center gap-2 mb-1">
+                        <span class="badge-myth">MYTH</span>
+                        <strong class="text-danger small">"Multivitamin supplements can replace a diet lacking vegetables."</strong>
+                      </div>
+                      <div class="d-flex align-items-start gap-2 mt-2">
+                        <span class="badge-fact">FACT</span>
+                        <p class="small mb-0 text-dark">Supplements lack the complex synergistic food matrix, dietary fiber, bioflavonoids, and polyphenols present in natural produce that enable nutrient absorption.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 2: Mental Health & Emotional Well-being -->
+              <div class="accordion-item reveal-on-scroll delay-200">
+                <h3 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <span class="accordion-icon-wrap" aria-hidden="true">
+                      <i class="bi bi-brain"></i>
+                    </span>
+                    Mental Health, Academic Stress & Burnout Management
+                  </button>
+                </h3>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionAwareness">
+                  <div class="accordion-body">
+                    <p>
+                      Mental fitness is an inseparable part of physiological health. Academic deadlines, competitive exams, and social pressures frequently induce sympathetic nervous overdrive.
+                    </p>
+                    <div class="row g-3 mt-1">
+                      <div class="col-md-6">
+                        <div class="p-3 bg-light rounded-3 h-100 border">
+                          <h4 class="fs-6 fw-bold text-primary mb-2"><i class="bi bi-exclamation-triangle me-1"></i> Early Warning Signs of Burnout</h4>
+                          <ul class="small mb-0 ps-3 text-muted">
+                            <li>Persistent emotional exhaustion even after resting</li>
+                            <li>Loss of focus and chronic cognitive brain fog</li>
+                            <li>Unexplained sleep disruptions and irritability</li>
+                            <li>Social isolation from friends and family</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="p-3 bg-light rounded-3 h-100 border">
+                          <h4 class="fs-6 fw-bold text-success mb-2"><i class="bi bi-heart-pulse me-1"></i> Proactive Coping Toolkit</h4>
+                          <ul class="small mb-0 ps-3 text-muted">
+                            <li><strong>Pomodoro Technique:</strong> 25 min deep study, 5 min stretch</li>
+                            <li><strong>Vagus Nerve Stimulation:</strong> Cold water face splash</li>
+                            <li><strong>Seek Counsel:</strong> College counseling services and trusted mentors</li>
+                            <li><strong>Tele-MANAS Toll-Free (India):</strong> 14416 (24/7 Support)</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 3: Personal & Environmental Hygiene -->
+              <div class="accordion-item reveal-on-scroll delay-300">
+                <h3 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <span class="accordion-icon-wrap" aria-hidden="true">
+                      <i class="bi bi-hand-thumbs-up"></i>
+                    </span>
+                    Daily Hygiene & Infection Control Principles
+                  </button>
+                </h3>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionAwareness">
+                  <div class="accordion-body">
+                    <p>
+                      Proactive personal hygiene breaks the chain of pathogen transmission in classrooms, hostels, and public transit.
+                    </p>
+                    <ul class="list-unstyled mb-0">
+                      <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i><strong>The 20-Second Handwashing Rule:</strong> Lathering all surface areas (palms, back of hands, between fingers, under nails) with soap dismantles lipid envelopes of viruses.</li>
+                      <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i><strong>Mobile Screen Disinfection:</strong> College smartphones carry more microbial density than most public surfaces. Wipe gently with 70% isopropyl alcohol weekly.</li>
+                      <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i><strong>Oral Microbiome Care:</strong> Flossing daily prevents subgingival bacterial biofilm that is clinically correlated with systemic cardiovascular inflammation.</li>
+                      <li><i class="bi bi-check2-circle text-success me-2"></i><strong>Hydration Bottle Cleaning:</strong> Wash reusable water bottles daily with hot water and soap to prevent stagnant microbial accumulation.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 4: Regular Health Checkups -->
+              <div class="accordion-item reveal-on-scroll delay-400">
+                <h3 class="accordion-header" id="headingFour">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    <span class="accordion-icon-wrap" aria-hidden="true">
+                      <i class="bi bi-clipboard2-pulse"></i>
+                    </span>
+                    Essential Annual Checkups & Screening Biomarkers
+                  </button>
+                </h3>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionAwareness">
+                  <div class="accordion-body">
+                    <p>
+                      Preventative diagnostic screening catches asymptomatic physiological trends years before disease onset.
+                    </p>
+                    <div class="table-responsive">
+                      <table class="table table-sm table-bordered align-middle small mb-0">
+                        <thead class="table-light">
+                          <tr>
+                            <th>Screening Test</th>
+                            <th>Recommended Frequency</th>
+                            <th>Clinical Benchmark</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td><strong>Blood Pressure (BP)</strong></td>
+                            <td>Every 6 Months</td>
+                            <td>&lt; 120/80 mmHg</td>
+                          </tr>
+                          <tr>
+                            <td><strong>Fasting Blood Glucose / HbA1c</strong></td>
+                            <td>Annual</td>
+                            <td>HbA1c &lt; 5.7% (Fasting &lt; 99 mg/dL)</td>
+                          </tr>
+                          <tr>
+                            <td><strong>Lipid Profile (Cholesterol)</strong></td>
+                            <td>Every 1–2 Years</td>
+                            <td>Triglycerides &lt; 150 mg/dL, HDL &gt; 50 mg/dL</td>
+                          </tr>
+                          <tr>
+                            <td><strong>Vitamin D3 & Vitamin B12</strong></td>
+                            <td>Annual (Crucial for students)</td>
+                            <td>Vit D &gt; 30 ng/mL, B12 &gt; 400 pg/mL</td>
+                          </tr>
+                          <tr>
+                            <td><strong>Comprehensive Eye & Vision Test</strong></td>
+                            <td>Annual</td>
+                            <td>Assess screen-induced refractive changes</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 5: Preventing Common Lifestyle Diseases -->
+              <div class="accordion-item reveal-on-scroll delay-500">
+                <h3 class="accordion-header" id="headingFive">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    <span class="accordion-icon-wrap" aria-hidden="true">
+                      <i class="bi bi-shield-shaded"></i>
+                    </span>
+                    Preventing Common Lifestyle & Metabolic Disorders
+                  </button>
+                </h3>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionAwareness">
+                  <div class="accordion-body">
+                    <p>
+                      Conditions such as Type 2 Diabetes, Hypertension, and Non-Alcoholic Fatty Liver Disease (NAFLD) are strongly driven by lifestyle factors and can be actively mitigated:
+                    </p>
+                    <div class="row g-3">
+                      <div class="col-md-4">
+                        <div class="border rounded-3 p-3 bg-white h-100">
+                          <h4 class="fs-6 fw-bold text-success mb-1">1. Insulin Sensitivity</h4>
+                          <p class="small text-muted mb-0">Prioritize dietary fiber and resistance exercise. Muscle contraction moves glucose into cells independently of insulin.</p>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="border rounded-3 p-3 bg-white h-100">
+                          <h4 class="fs-6 fw-bold text-success mb-1">2. Vascular Protection</h4>
+                          <p class="small text-muted mb-0">Limit dietary sodium from packaged snacks, quit smoking and vaping, and increase potassium via bananas and leafy greens.</p>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="border rounded-3 p-3 bg-white h-100">
+                          <h4 class="fs-6 fw-bold text-success mb-1">3. Liver Restoration</h4>
+                          <p class="small text-muted mb-0">Eliminate high-fructose corn syrups and sweetened carbonated sodas, which metabolize directly into visceral hepatic fat.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         8. IMAGES & INSPIRATION GALLERY (With Bootstrap Modal Lightbox)
+         ========================================================================= -->
+    <section id="gallery" class="section-padding bg-alt-section" aria-labelledby="galleryHeading">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="section-tag accent">
+            <i class="bi bi-images"></i> Visual Inspiration
+          </span>
+          <h2 id="galleryHeading" class="section-title">Moments of Wellness in Everyday Life</h2>
+          <p class="section-subtitle">
+            Click on any photograph to view the high-resolution lightbox and discover holistic wellness principles in action.
+          </p>
+        </div>
+
+        <!-- 6 Gallery Items Grid -->
+        <div class="row g-4">
+          <!-- Gallery Item 1 -->
+          <div class="col-sm-6 col-lg-4">
+            <div class="gallery-item reveal-on-scroll delay-100" data-gallery-desc="Farm-to-table organic vegetables rich in protective phytochemicals.">
+              <img src="images/gallery-1.jpg" alt="Vibrant fresh farm produce and vegetables" loading="lazy">
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon" aria-hidden="true"><i class="bi bi-zoom-in"></i></span>
+                <h3 class="gallery-item-title">Organic Farm Bounty</h3>
+                <span class="gallery-item-tag">Nutrition & Phytochemicals</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery Item 2 -->
+          <div class="col-sm-6 col-lg-4">
+            <div class="gallery-item reveal-on-scroll delay-200" data-gallery-desc="Endurance running through forest trails, elevating lung capacity and aerobic health.">
+              <img src="images/gallery-2.jpg" alt="Outdoor trail runner pacing through a sunlit pine forest" loading="lazy">
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon" aria-hidden="true"><i class="bi bi-zoom-in"></i></span>
+                <h3 class="gallery-item-title">Outdoor Trail Running</h3>
+                <span class="gallery-item-tag">Cardio & Mental Resilience</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery Item 3 -->
+          <div class="col-sm-6 col-lg-4">
+            <div class="gallery-item reveal-on-scroll delay-300" data-gallery-desc="Mindful meditation in morning dawn to calibrate circadian rhythm and mental focus.">
+              <img src="images/gallery-3.jpg" alt="Mindfulness meditation at sunrise with calm posture" loading="lazy">
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon" aria-hidden="true"><i class="bi bi-zoom-in"></i></span>
+                <h3 class="gallery-item-title">Sunrise Mindfulness</h3>
+                <span class="gallery-item-tag">Mental Calm & Circadian Clock</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery Item 4 -->
+          <div class="col-sm-6 col-lg-4">
+            <div class="gallery-item reveal-on-scroll delay-100" data-gallery-desc="Balanced breakfast spread with fresh fruit, natural whole grains, and herbal tea.">
+              <img src="images/gallery-4.jpg" alt="Balanced wholesome morning breakfast with berries and toast" loading="lazy">
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon" aria-hidden="true"><i class="bi bi-zoom-in"></i></span>
+                <h3 class="gallery-item-title">Wholesome Morning Plate</h3>
+                <span class="gallery-item-tag">Cellular Fuel & Gut Health</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery Item 5 -->
+          <div class="col-sm-6 col-lg-4">
+            <div class="gallery-item reveal-on-scroll delay-200" data-gallery-desc="Pure refreshing citrus infused water for sustained electrolyte replenishment.">
+              <img src="images/gallery-5.jpg" alt="Pure glass of water with citrus slices and mint leaves" loading="lazy">
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon" aria-hidden="true"><i class="bi bi-zoom-in"></i></span>
+                <h3 class="gallery-item-title">Pure Citrus Hydration</h3>
+                <span class="gallery-item-tag">Electrolytes & Vitality</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gallery Item 6 -->
+          <div class="col-sm-6 col-lg-4">
+            <div class="gallery-item reveal-on-scroll delay-300" data-gallery-desc="Outdoor yoga practice fostering body flexibility and community wellness.">
+              <img src="images/gallery-6.jpg" alt="Outdoor yoga flexibility pose in an open green meadow" loading="lazy">
+              <div class="gallery-overlay">
+                <span class="gallery-zoom-icon" aria-hidden="true"><i class="bi bi-zoom-in"></i></span>
+                <h3 class="gallery-item-title">Park Yoga Session</h3>
+                <span class="gallery-item-tag">Flexibility & Community</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Modal Lightbox (Bootstrap 5.3 Modal) -->
+    <div class="modal fade" id="galleryLightboxModal" tabindex="-1" aria-labelledby="lightboxTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content lightbox-content position-relative">
+          <button type="button" class="btn-close btn-close-white btn-close-lightbox" data-bs-dismiss="modal" aria-label="Close Lightbox"></button>
+          <div class="lightbox-img-wrapper">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" id="lightboxImg" class="img-fluid" alt="Expanded gallery preview">
+            <div class="lightbox-caption">
+              <h4 id="lightboxTitle" class="fs-5 fw-bold text-white mb-1">Gallery Title</h4>
+              <p id="lightboxDesc" class="small text-white-50 mb-0">Gallery description</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========================================================================
+         9. CONTACT & COMMUNITY SECTION
+         ========================================================================= -->
+    <section id="contact" class="section-padding" aria-labelledby="contactHeading">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="section-tag">
+            <i class="bi bi-chat-heart"></i> Get In Touch
+          </span>
+          <h2 id="contactHeading" class="section-title">Join the JivanSathi Wellness Community</h2>
+          <p class="section-subtitle">
+            Have questions about healthy lifestyle habits, suggestions for campus wellness, or want to share your fitness transformation? We are here for you.
+          </p>
+        </div>
+
+        <div class="row g-4 align-items-stretch">
+          
+          <!-- Contact Info Left Column -->
+          <div class="col-lg-5">
+            <aside class="contact-info-card reveal-on-scroll delay-100">
+              <div class="d-inline-flex align-items-center gap-2 mb-3">
+                <span class="brand-icon-badge" aria-hidden="true">
+                  <i class="bi bi-heart-pulse-fill"></i>
+                </span>
+                <span class="fs-5 fw-bold text-white">JivanSathi Initiative</span>
+              </div>
+
+              <h3>Let's Foster a Healthier Tomorrow Together</h3>
+              <p class="text-white-50 mb-4">
+                Developed as a comprehensive Skill Development Project (SDP) by the Department of Computer Science & Engineering, The National Institute of Engineering (NIE), Mysuru.
+              </p>
+
+              <div class="contact-item">
+                <div class="contact-icon" aria-hidden="true">
+                  <i class="bi bi-geo-alt-fill"></i>
+                </div>
+                <div>
+                  <h4>Campus Location</h4>
+                  <p>Department of CSE, NIE Mysuru<br>Manandavadi Road, Mysuru, Karnataka — 570008</p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon" aria-hidden="true">
+                  <i class="bi bi-envelope-fill"></i>
+                </div>
+                <div>
+                  <h4>Developer & Project Inquiries</h4>
+                  <p>shubhsharma.1328@gmail.com</p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-icon" aria-hidden="true">
+                  <i class="bi bi-person-badge-fill"></i>
+                </div>
+                <div>
+                  <h4>Project Author</h4>
+                  <p>Shubh Sharma (CSE, NIE Mysuru)</p>
+                </div>
+              </div>
+
+              <div class="social-links">
+                <a href="https://github.com/Smirk1308" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub Profile">
+                  <i class="bi bi-github"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn Profile">
+                  <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="mailto:shubhsharma.1328@gmail.com" class="social-btn" aria-label="Send Email">
+                  <i class="bi bi-envelope"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Twitter Profile">
+                  <i class="bi bi-twitter-x"></i>
+                </a>
+              </div>
+            </aside>
+          </div>
+
+          <!-- Contact Form Right Column -->
+          <div class="col-lg-7">
+            <div class="contact-form-card reveal-on-scroll delay-200">
+              <h3 class="mb-2">Send Us a Message</h3>
+              <p class="text-muted small mb-4">Fill out the fields below and our wellness support team will reply within 24 hours.</p>
+
+              <!-- Dynamic Success Alert Container -->
+              <div id="contactFormAlert" class="d-none"></div>
+
+              <!-- Contact Form with HTML5 / Bootstrap Validation -->
+              <form id="jivansathiContactForm" class="needs-validation" novalidate>
+                <div class="row g-3">
+                  
+                  <div class="col-md-6">
+                    <label for="contactName" class="form-label">Full Name <span class="text-danger">*</span></label>
+                    <div class="input-group">
+                      <span class="input-group-text bg-white border-end-0 text-muted"><i class="bi bi-person"></i></span>
+                      <input type="text" class="form-control border-start-0 ps-0" id="contactName" placeholder="e.g. Shubh Sharma" required>
+                      <div class="invalid-feedback">
+                        Please provide your full name.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="contactEmail" class="form-label">Email Address <span class="text-danger">*</span></label>
+                    <div class="input-group">
+                      <span class="input-group-text bg-white border-end-0 text-muted"><i class="bi bi-envelope"></i></span>
+                      <input type="email" class="form-control border-start-0 ps-0" id="contactEmail" placeholder="name@domain.com" required>
+                      <div class="invalid-feedback">
+                        Please provide a valid email address.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="contactSubject" class="form-label">Inquiry Topic <span class="text-danger">*</span></label>
+                    <div class="input-group">
+                      <span class="input-group-text bg-white border-end-0 text-muted"><i class="bi bi-tag"></i></span>
+                      <select class="form-select border-start-0 ps-0" id="contactSubject" required>
+                        <option value="" disabled selected>Select a wellness topic...</option>
+                        <option value="General Health Awareness Inquiry">General Health Awareness Inquiry</option>
+                        <option value="Student Nutrition & Diet Suggestion">Student Nutrition & Diet Suggestion</option>
+                        <option value="Campus Fitness & Exercise Collaboration">Campus Fitness & Exercise Collaboration</option>
+                        <option value="Website Feedback & Feature Request">Website Feedback & Feature Request</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        Please choose an inquiry topic.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <label for="contactMessage" class="form-label">Your Message <span class="text-danger">*</span></label>
+                    <textarea class="form-control" id="contactMessage" rows="5" placeholder="Share your wellness questions, suggestions, or thoughts..." required></textarea>
+                    <div class="invalid-feedback">
+                      Please enter your message (at least 10 characters).
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="contactConsent" required>
+                      <label class="form-check-label small text-muted" for="contactConsent">
+                        I agree to receive general wellness educational updates and acknowledge that JivanSathi provides lifestyle information, not medical prescriptions.
+                      </label>
+                      <div class="invalid-feedback">
+                        You must agree before submitting.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 mt-4">
+                    <button type="submit" class="btn btn-submit-contact">
+                      <span>Send Wellness Message</span>
+                      <i class="bi bi-send-fill ms-2"></i>
+                    </button>
+                  </div>
+
+                </div>
+              </form>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       10. FOOTER
+       ========================================================================= -->
+  <footer class="footer-jivansathi" role="contentinfo">
+    <div class="container">
+      <div class="row g-4 justify-content-between">
+        
+        <!-- Brand Info -->
+        <div class="col-lg-4">
+          <a class="footer-brand-title" href="#hero">
+            <span class="brand-icon-badge" style="width:34px; height:34px;" aria-hidden="true">
+              <i class="bi bi-heart-pulse-fill fs-6"></i>
+            </span>
+            <span>JivanSathi<span class="brand-accent-dot">.</span></span>
+          </a>
+          <p class="footer-text mt-2">
+            Your companion for a healthier life. Dedicated to promoting evidence-based wellness education, holistic nutrition, everyday exercise, and mental well-being across collegiate communities.
+          </p>
+          <div class="d-flex gap-2 mt-3">
+            <span class="badge bg-success-subtle text-success border border-success-subtle px-3 py-2 rounded-pill small">
+              <i class="bi bi-mortarboard-fill me-1"></i> NIE Mysuru SDP
+            </span>
+            <span class="badge bg-warning-subtle text-warning border border-warning-subtle px-3 py-2 rounded-pill small">
+              <i class="bi bi-code-slash me-1"></i> CSE Department
+            </span>
+          </div>
+        </div>
+
+        <!-- Quick Links: Navigation -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4 class="footer-heading">Wellness Pillars</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#lifestyle"><i class="bi bi-chevron-right small me-1"></i> Daily Lifestyle</a></li>
+            <li><a href="#nutrition"><i class="bi bi-chevron-right small me-1"></i> Healthy Foods</a></li>
+            <li><a href="#exercise"><i class="bi bi-chevron-right small me-1"></i> Active Fitness</a></li>
+            <li><a href="#habits"><i class="bi bi-chevron-right small me-1"></i> Sleep & Rest</a></li>
+            <li><a href="#habits"><i class="bi bi-chevron-right small me-1"></i> Water Tracker</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Links: Resources & Awareness -->
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4 class="footer-heading">Health Resources</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#awareness"><i class="bi bi-chevron-right small me-1"></i> Myths vs Facts</a></li>
+            <li><a href="#awareness"><i class="bi bi-chevron-right small me-1"></i> Mental Well-being</a></li>
+            <li><a href="#awareness"><i class="bi bi-chevron-right small me-1"></i> Personal Hygiene</a></li>
+            <li><a href="#awareness"><i class="bi bi-chevron-right small me-1"></i> Annual Checkups</a></li>
+            <li><a href="#gallery"><i class="bi bi-chevron-right small me-1"></i> Wellness Gallery</a></li>
+          </ul>
+        </div>
+
+        <!-- Department & Author Info -->
+        <div class="col-md-5 col-lg-3">
+          <h4 class="footer-heading">Academic Project</h4>
+          <p class="small text-muted mb-2">
+            Skill Development Project (HTML5, CSS3 & Bootstrap 5.3) developed under the curriculum of:
+          </p>
+          <div class="p-3 rounded-3" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);">
+            <div class="fw-bold text-white small">The National Institute of Engineering</div>
+            <div class="text-white-50 small">Department of Computer Science & Engineering</div>
+            <div class="text-success small fw-semibold mt-1">Mysuru, Karnataka, India</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Medical Disclaimer Card -->
+      <div class="disclaimer-card" role="note" aria-label="Medical Disclaimer">
+        <p>
+          <i class="bi bi-shield-exclamation text-warning me-1"></i>
+          <strong>Medical Disclaimer:</strong> The content provided on <em>JivanSathi</em> is published solely for educational and health awareness purposes. It is not intended to be a substitute for professional medical diagnosis, advice, or treatment by a licensed physician or registered dietitian. Always consult a healthcare specialist before starting any rigorous fitness regimen or dietary protocol.
+        </p>
+      </div>
+
+      <!-- Bottom Copyright & Credit -->
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 <strong>JivanSathi</strong>. All rights reserved.
+        </div>
+        <div>
+          Made with <i class="bi bi-heart-fill text-danger mx-1"></i> by <strong>Shubh Sharma</strong>, CSE, NIE Mysuru
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       11. FLOATING BACK-TO-TOP BUTTON
+       ========================================================================= -->
+  <button type="button" class="back-to-top" id="btnBackToTop" aria-label="Scroll back to top of page">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- =========================================================================
+       12. SCRIPTS: Bootstrap 5.3 Bundle (CDN) & Main JS
+       ========================================================================= -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
